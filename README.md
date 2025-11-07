@@ -9,6 +9,11 @@ See:
 * https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview
 * https://github.com/ai4curation/curation-skills
 
+Currently there is only one, for repo best practices:
+
+
+* [github-repo-skill](https://github.com/berkeleybop/bbop-skills/tree/main/github-repo-skill)
+
 ## General guidelines on use of AI
 
 All group members are expected to develop core AI capabilities and
