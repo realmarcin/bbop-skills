@@ -9,6 +9,23 @@ See:
 * https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview
 * https://github.com/ai4curation/curation-skills
 
+## How to use this
+
+### Read the skills
+
+Everyone should read the skills in this repo and check they are in agreement - PRs always welcome!
+
+In Claude Code you can install these via the marketplace
+
+```
+/plugin marketplace add berkeleybop/bbop-skills
+```
+
+Or just copy into your own skills folder.
+
+But it's as important people read and understand the skills as it is that their agents use them
+
+
 ## General guidelines on use of AI
 
 All group members are expected to develop core AI capabilities and

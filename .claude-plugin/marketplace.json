@@ -1,0 +1,22 @@
+{
+  "name": "bbop-skills",
+  "owner": {
+    "name": "Chris Mungall",
+    "email": "cjmungall@lbl.gov"
+  },
+  "metadata": {
+    "description": "BBOP skills",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "github-repo-skill",
+      "description": "Best practice for repository creation, maintenance, and hygeiebe",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./github-repo-skill"
+      ]
+    }
+  ]
+}
