@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "github-repo-skill",
-      "description": "Best practice for repository creation, maintenance, and hygeiebe",
+      "description": "Best practice for repository creation, maintenance, and hygiene",
       "source": "./",
       "strict": false,
       "skills": [

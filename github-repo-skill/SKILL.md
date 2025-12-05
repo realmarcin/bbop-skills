@@ -32,24 +32,32 @@ Additionally the group uses additional drop-in templates for AI integrations:
 
 These are included in the templates above but some general over-arching preferences: 
 
-* modern python dev stack: `uv`, `ruff`
+* modern python dev stack: `uv`, `ruff` (currently `mypy` for typing but we may switch to  https://docs.astral.sh/ty/)
 * for builds, both `just` and `make` are favored, with `just` favored for non-pipeline cases
 
 ## Engineering best practice
 
 * pydantic or pydantic generated from LinkML for data models and data access objects (dataclasses are fine for engine objects)
-* always use typing
+* always make sure function/method parameters and return objects are typed. Use mypy or equivalent to test.
 * testing:
    * follow TDD, use pytest-style tests, `@pytest.mark.parametrize` is good for combinatorial testing
    * always use doctests: make them informative for humans but also serving as additional tests
    * ensure unit tests and tests that depend on external APIs, infrastructure etc are separated (e.g. `pytest.mark.integration`)
+   * for testing external APIs or services, use vcrpy
    * do not create mock tests unless explicitly requested
    * for data-oriented projects, yaml, tsvs, etc can go in `tests/input` or smilar
-   * for schemas, following the linkml templates, and ensure schemas and example test data is validated
+   * for schemas, follow the linkml copier template, and ensure schemas and example test data is validated
    * for ontologies, follow ODK best practice and ensure ontologies are comprehensively axiomatized to allow for reasoner-based checking
 * jupyter notebooks are good for documentation, dashboards, and analysis, but ensure that core logic is separated out and has unit tests
-* CLIs, APIs, and MCPs should be shims on top of core logic, and should have their own tests
-* Every library should have a fully featured CLI. typer is favored, but click is also good.
+* CLI:
+   * Every library should have a fully featured CLI
+   * typer is favored, but click is also good.
+   * CLIs, APIs, and MCPs should be shims on top of core logic
+   * have separate test for both core logic and CLIs.
+   * Use idiomatic options and clig conventions. Group standards: `-i/--input`, `-o/--output` (default stdout), `-f/--format` (input format), `-O/--output-format`, `-v/-vv`
+* Exceptions
+   * In general you should not need to worry about catching exceptions, although for a well-polished CLI some catching in the CLI layer is fine
+   * IMPORTANT: better to fail fast and know there is a problem than to defensively catch and carry on as if everything is OK (general principle: transparency)
 
 ## Dependency management
 
