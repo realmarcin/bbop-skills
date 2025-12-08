@@ -55,6 +55,7 @@ These are included in the templates above but some general over-arching preferen
    * CLIs, APIs, and MCPs should be shims on top of core logic
    * have separate test for both core logic and CLIs.
    * Use idiomatic options and clig conventions. Group standards: `-i/--input`, `-o/--output` (default stdout), `-f/--format` (input format), `-O/--output-format`, `-v/-vv`
+   * When testing Typer/Rich CLIs, set `NO_COLOR=1` and `TERM=dumb` env vars to avoid ANSI escape codes breaking string assertions in CI.
 * Exceptions
    * In general you should not need to worry about catching exceptions, although for a well-polished CLI some catching in the CLI layer is fine
    * IMPORTANT: better to fail fast and know there is a problem than to defensively catch and carry on as if everything is OK (general principle: transparency)
@@ -72,10 +73,17 @@ These are included in the templates above but some general over-arching preferen
 * all the group copier templates include extensive github actions for ensuring PRs are high quality
 * github repo should have adequate metadata, links to docs, tags
 
+## Source of truth
+
+* always have a clear source of truth (SoT) for all content, with github favored
+* where projects dictate SoT is google docs/sheets, use https://rclone.org/ to sync
+
 ## Documentation
 
+* markdown is always favored, but older sites may use sphinx
 * Follow [Diátaxis framework](https://diataxis.fr/): tutorial, how-to, reference, explanation
 * Use examples extensively - examples can double as tests
 * frameworks: mkdocs is generally favored due to simplicity but sphinx is ok for older projects
 * Every project must have a comprehensive up to date README.md (or the README.md can point to site generated from mkdocs)
-
+* jupyter notebooks can serve as combined integration tests/docs, use mkdocs-jupyter, for CLI examples, use `%%bash`
+* Formatting tips: lists should be preceded by a blank line to avoid formatting issues withmkdocs
