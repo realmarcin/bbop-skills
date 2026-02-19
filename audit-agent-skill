@@ -1,14 +1,42 @@
 ---
 name: assess-local-agent
-description: Audits the current repository against the "Local-First Dual-Mode Agentic System" assessment checklist. Evaluates provenance, scientific capability, and safety features.
+description: Audits Python-based local AI agent repositories against 2026 standards for provenance, reproducibility, and scientific capability. Evaluates logging, versioning, tool validation, error correction, and cleanup. Use when the user asks to "audit the repo," "check agent compliance," "assess provenance," or "verify best practices" for local-first dual-mode agent systems (especially computational biology workflows).
 ---
 
 # Assessment Skill: Local-First Dual-Mode Agentic Systems
 
 This skill guides you through assessing a local AI agent repository against the 2026 standards for provenance, reproducibility, scientific capability, and user safety.
 
+## Overview
+
+Use this skill to assess local AI agent repositories (primarily Python-based) against the 2026 standards for **Local-First Dual-Mode Agentic Systems**. This assessment framework focuses on:
+
+- **Local-first**: Agents that run on user machines with local provenance logging (not cloud-only SaaS)
+- **Dual-mode**: Systems that support both conversational interaction and code execution workflows
+- **Scientific capability**: Particularly relevant for computational biology, systems biology, and scientific research workflows
+
+This skill is designed for repositories that:
+- Implement AI agents in Python
+- Use tools like MCP servers, Docker, or scientific computation frameworks
+- Need provenance tracking for reproducibility
+- Handle scientific data or workflows
+
+**When NOT to use this skill:**
+- General web applications without agent capabilities
+- Non-Python codebases (though principles may still apply)
+- Cloud-only SaaS products without local execution
+- Simple scripts or libraries that aren't agent systems
+
 ## Usage
-Invoke this skill when the user asks to "audit the repo," "check compliance," "assess the agent," or "verify best practices."
+
+Invoke this skill when the user asks to:
+- "audit the repo" or "audit this agent"
+- "check compliance" or "assess against standards"
+- "verify best practices" for agent systems
+- "evaluate provenance" or "check reproducibility"
+- "assess the agent capabilities"
+
+The skill will guide you through systematic evaluation of 9 criteria across provenance, scientific capability, and user safety.
 
 ## Assessment Checklist & Criteria
 
